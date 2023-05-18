@@ -82,7 +82,7 @@ class IOWebSocketChannel extends StreamChannelMixin
       url.toString(),
       headers: headers,
       protocols: protocols,
-      customClient: customClient,
+      customClient: customClient ?? HttpClient(),
     );
     if (connectTimeout != null) {
       future = future.timeout(connectTimeout);
